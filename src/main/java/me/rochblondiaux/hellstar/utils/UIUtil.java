@@ -3,6 +3,7 @@ package me.rochblondiaux.hellstar.utils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import lombok.NonNull;
 
 import java.io.IOException;
@@ -33,9 +34,17 @@ public class UIUtil {
     }
 
     public static Optional<InputStream> getResource(@NonNull String path) {
-        InputStream stream = UIUtil.class.getClassLoader().getResourceAsStream("img/icon-white.png");
+        InputStream stream = UIUtil.class.getClassLoader().getResourceAsStream(path);
         if (Objects.isNull(stream))
             return Optional.empty();
         return Optional.of(stream);
+    }
+
+    public static String toHexString(Color color) {
+        int r = ((int) Math.round(color.getRed() * 255)) << 24;
+        int g = ((int) Math.round(color.getGreen() * 255)) << 16;
+        int b = ((int) Math.round(color.getBlue() * 255)) << 8;
+        int a = ((int) Math.round(color.getOpacity() * 255));
+        return String.format("#%08X", (r + g + b + a));
     }
 }

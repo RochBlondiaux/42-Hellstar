@@ -9,11 +9,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Pane;
 import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
+import me.rochblondiaux.hellstar.HellStar;
+import me.rochblondiaux.hellstar.service.ConfigurationService;
 
-import javax.swing.*;
 import java.io.File;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
@@ -71,8 +72,13 @@ public class OpenController implements Initializable {
 
     @FXML
     public void openFileSelector(MouseEvent e) {
+        ConfigurationService service = HellStar.get().getConfigurationService();
         DirectoryChooser chooser = new DirectoryChooser();
         chooser.setTitle("Select project folder");
-        chooser.showDialog(null);
+        chooser.setInitialDirectory(service.getLastPath().toFile());
+        File file = chooser.showDialog(null);
+        if (Objects.isNull(file))
+            return;
+        service.setLastPath(file.toPath());
     }
 }

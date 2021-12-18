@@ -1,4 +1,10 @@
+me\rochblondiaux\hellstar\model\dialog\DialogBuilder.class
+me\rochblondiaux\hellstar\model\dialog\Dialog.class
+me\rochblondiaux\hellstar\model\dialog\DialogType.class
+me\rochblondiaux\hellstar\controller\DialogController.class
+me\rochblondiaux\hellstar\HellStarLauncher.class
 me\rochblondiaux\hellstar\controller\OpenController.class
 me\rochblondiaux\hellstar\utils\UIUtil.class
 me\rochblondiaux\hellstar\controller\HomeController.class
-me\rochblondiaux\hellstar\HellStarLauncher.class
+me\rochblondiaux\hellstar\HellStar.class
+me\rochblondiaux\hellstar\service\ConfigurationService.class

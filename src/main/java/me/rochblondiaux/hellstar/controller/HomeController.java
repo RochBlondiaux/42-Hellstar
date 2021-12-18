@@ -1,5 +1,6 @@
 package me.rochblondiaux.hellstar.controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -30,7 +31,7 @@ public class HomeController implements Initializable {
 
     @FXML
     private void exit() {
-        System.exit(0);
+        Platform.exit();
     }
 
     @FXML

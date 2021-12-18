@@ -15,6 +15,8 @@ public class HellStarLauncher extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        new HellStar();
+
         stage.initStyle(StageStyle.UNDECORATED);
         Parent root = UIUtil.load("home").orElseThrow();
         Scene scene = new Scene(root);
