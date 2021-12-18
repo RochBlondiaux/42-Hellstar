@@ -1,6 +1,8 @@
 package me.rochblondiaux.hellstar.service;
 
 import lombok.NonNull;
+import me.rochblondiaux.hellstar.model.dialog.DialogBuilder;
+import me.rochblondiaux.hellstar.model.dialog.DialogType;
 import net.harawata.appdirs.AppDirsFactory;
 
 import java.io.File;
@@ -41,6 +43,10 @@ public class ConfigurationService {
             try {
                 configuration.store(new FileOutputStream(configurationFile), null);
             } catch (IOException e) {
+                new DialogBuilder()
+                        .setMessage("Couldn't save properties to configuration file!")
+                        .setType(DialogType.WARNING)
+                        .build();
                 e.printStackTrace();
             }
         }
@@ -53,6 +59,10 @@ public class ConfigurationService {
             try {
                 configurationFile.createNewFile();
             } catch (IOException e) {
+                new DialogBuilder()
+                        .setMessage("Couldn't create configuration file!")
+                        .setType(DialogType.WARNING)
+                        .build();
                 e.printStackTrace();
             }
         }
@@ -60,6 +70,10 @@ public class ConfigurationService {
             properties.load(new FileInputStream(configurationFile));
             return properties;
         } catch (IOException e) {
+            new DialogBuilder()
+                    .setMessage("Couldn't load properties from configuration file!")
+                    .setType(DialogType.WARNING)
+                    .build();
             e.printStackTrace();
         }
         return null;

@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea88d0b3-a37f-4fc5-9aa8-d55b1af26921" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/DialogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/model/dialog/Dialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/model/dialog/DialogBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/model/dialog/DialogType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ConfigurationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/info.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/success.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/warning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/scene/dialog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStarLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStarLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/OpenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/OpenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/utils/UIUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/utils/UIUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,14 +13,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="12840" />
+    <option name="totalTimeSeconds" value="15168" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -130,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639846732971</updated>
-      <workItem from="1639846735642" duration="15577000" />
+      <workItem from="1639846735642" duration="18340000" />
     </task>
     <servers />
   </component>

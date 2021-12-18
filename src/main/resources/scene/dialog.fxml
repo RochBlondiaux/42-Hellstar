@@ -26,7 +26,7 @@
       </Text>
       <Text fx:id="text" fill="WHITE" layoutX="159.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is a very important message!" wrappingWidth="404.13671875">
          <font>
-            <Font size="17.0" />
+            <Font size="14.0" />
          </font>
       </Text>
       <Button fx:id="okBtn" layoutX="293.0" layoutY="111.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #2ed573;" stylesheets="@../css/home.css" text="OK" textFill="WHITE" />

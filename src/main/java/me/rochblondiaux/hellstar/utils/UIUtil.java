@@ -1,13 +1,17 @@
 package me.rochblondiaux.hellstar.utils;
 
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import lombok.NonNull;
+import me.rochblondiaux.hellstar.model.dialog.DialogBuilder;
+import me.rochblondiaux.hellstar.model.dialog.DialogType;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -19,10 +23,22 @@ public class UIUtil {
 
     public static Optional<Pane> load(@NonNull String name) {
         try {
-            Pane pane = FXMLLoader.load(Objects.requireNonNull(UIUtil.class.getClassLoader().getResource("scene/" + name + ".fxml")));
+            URL url = UIUtil.class.getClassLoader().getResource("scene/" + name + ".fxml");
+            if (Objects.isNull(url) || Objects.isNull(url.getPath())) {
+                new DialogBuilder()
+                        .setMessage(String.format("Couldn't load %s window from resources folder!", name))
+                        .setType(DialogType.ERROR)
+                        .build();
+                return Optional.empty();
+            }
+            Pane pane = FXMLLoader.load(url);
             if (Objects.nonNull(pane))
                 return Optional.of(pane);
         } catch (IOException e) {
+            new DialogBuilder()
+                    .setMessage(String.format("Couldn't load %s window from resources folder!", name))
+                    .setType(DialogType.ERROR)
+                    .build();
             e.printStackTrace();
         }
         return Optional.empty();

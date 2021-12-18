@@ -1,16 +1,19 @@
 package me.rochblondiaux.hellstar.controller;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Pane;
 import javafx.stage.DirectoryChooser;
+import lombok.NonNull;
 import me.rochblondiaux.hellstar.HellStar;
+import me.rochblondiaux.hellstar.model.dialog.DialogBuilder;
+import me.rochblondiaux.hellstar.model.dialog.DialogType;
 import me.rochblondiaux.hellstar.service.ConfigurationService;
+import me.rochblondiaux.hellstar.utils.UIUtil;
 
 import java.io.File;
 import java.net.URL;
@@ -33,38 +36,30 @@ public class OpenController implements Initializable {
 
     void setupGestureTarget(final Pane pane) {
         pane.setOnDragOver(event -> {
-            /* data is dragged over the target */
-            System.out.println("onDragOver");
-
             Dragboard db = event.getDragboard();
-            if (db.hasFiles()) {
+            if (db.hasFiles())
                 event.acceptTransferModes(TransferMode.COPY);
-            }
-
             event.consume();
         });
 
         pane.setOnDragDropped(event -> {
-            /* data dropped */
-            System.out.println("onDragDropped");
-
             Dragboard db = event.getDragboard();
 
-            if (db.hasFiles()) {
-
-                for (File file : db.getFiles()) {
-                    String absolutePath = file.getAbsolutePath();
-                    Image dbimage = new Image(absolutePath);
-                    ImageView dbImageView = new ImageView();
-                    dbImageView.setImage(dbimage);
-                    pane.getChildren().add(dbImageView);
-                }
-
-                event.setDropCompleted(true);
-            } else {
+            if (!db.hasFiles()) {
                 event.setDropCompleted(false);
+                event.consume();
+                return;
             }
-
+            db.getFiles()
+                    .stream()
+                    .filter(File::isDirectory)
+                    .findFirst()
+                    .ifPresentOrElse(this::callNextStep,
+                            () -> new DialogBuilder()
+                                    .setType(DialogType.WARNING)
+                                    .setMessage("Cannot find folder! Please try again.")
+                                    .build());
+            event.setDropCompleted(true);
             event.consume();
         });
 
@@ -80,5 +75,16 @@ public class OpenController implements Initializable {
         if (Objects.isNull(file))
             return;
         service.setLastPath(file.toPath());
+        callNextStep(file);
+    }
+
+    private void callNextStep(@NonNull File file) {
+        UIUtil.load("step1").ifPresentOrElse(pane -> {
+            Pane pane1 = (Pane) dragPane.getParent();
+            pane1.getChildren().add(pane);
+        }, () -> new DialogBuilder()
+                .setType(DialogType.ERROR)
+                .setMessage("An error occurred.")
+                .build());
     }
 }
