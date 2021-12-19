@@ -29,24 +29,10 @@
 
 ## 🗣️ About
 
-> _%aim%
+> %aim%
 
 ## 📑 Index
 
 %index_header%
 
 %index%
-
-## 🛠️ Usage
-
-### Requirements
-
-The function is written in C language and thus needs the **`gcc` compiler** and some standard **C libraries** to run.
-
-### Instructions
-
-_Coming soon_
-
-## 📋 Testing
-
-_Coming soon_
