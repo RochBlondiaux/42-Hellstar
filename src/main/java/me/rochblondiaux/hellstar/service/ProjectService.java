@@ -10,8 +10,7 @@ import me.rochblondiaux.hellstar.utils.UIUtil;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
+import java.nio.file.Files;
 
 /**
  * @author Roch Blondiaux
@@ -64,32 +63,43 @@ public class ProjectService {
     }
 
     public void generateIndex(@NonNull File dataFolder, @NonNull File readme) throws IOException {
-        int index = FileUtils.getIndex(readme, "%index_header%") + 1;
+        int index = FileUtils.getIndex(readme, "%index_header%");
+        int contentIndex = FileUtils.getIndex(readme, "%index%");
         FileUtils.replace(readme, "%index_header%", "`@root`\n");
 
-        /* Header */
-        int depth = 1;
-        FileUtils.walk(dataFolder)
-                .forEach(file -> {
+        walkDirectory(dataFolder, dataFolder, readme, index, contentIndex, 1);
+        FileUtils.replace(readme, "%index%", "\n");
+    }
+
+    private void walkFile(@NonNull File dataFolder, @NonNull File root, @NonNull File readme, @NonNull int contentIndex) throws IOException {
+        Files.walk(root.toPath(), 1)
+                .filter(s -> !root.toPath().equals(s))
+                .filter(path -> !path.toFile().isDirectory())
+                .forEach(s -> {
                     try {
-                        FileUtils.insertLine(readme, index,
-                                String.format("* [**\uD83D\uDCC1 %s:**](%s/) A common folder.", file.getName(), FileUtils.formatPath(dataFolder, file.toPath())));
-                        walk(file,  readme, index, depth);
+                        FileUtils.getFunctions(s.toFile())
+                                .forEach(s1 -> {
+                                    try {
+                                        FileUtils.insertLine(readme, contentIndex, String.format("* `%s` - %s.", s1, "A rly cool functions"));
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                });
+                        FileUtils.insertLine(readme, contentIndex, String.format("\n`@%s`", FileUtils.formatPath(dataFolder, s)));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 });
-
-        /* Content */
     }
 
-    private void walk(@NonNull File dataFolder, @NonNull File readme, @NonNull int index, @NonNull int depth) {
-        FileUtils.walk(dataFolder)
+    private void walkDirectory(@NonNull File dataFolder, @NonNull File root, @NonNull File readme, @NonNull int index, @NonNull int contentIndex, @NonNull int depth) {
+        FileUtils.walk(root)
                 .forEach(file -> {
                     try {
                         FileUtils.insertLine(readme, index + 1,
-                                String.format("\t".repeat(depth) + "* [**\uD83D\uDCC1 %s:**](%s/) A common folder.", file.getName(), FileUtils.formatPath(dataFolder, file.toPath())));
-                        walk(file,  readme, index + 2, depth + 1);
+                                String.format("\t".repeat(depth - 1) + "* [**\uD83D\uDCC1 %s:**](%s/) A common folder.", file.getName(), FileUtils.formatPath(dataFolder, file.toPath())));
+                        walkFile(dataFolder, file, readme, FileUtils.getIndex(readme, "%index%"));
+                        walkDirectory(dataFolder, file, readme, index + 1, contentIndex, depth + 1);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

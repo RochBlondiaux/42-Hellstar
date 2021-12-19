@@ -1,6 +1,7 @@
 package me.rochblondiaux.hellstar.utils;
 
 import lombok.NonNull;
+import lombok.SneakyThrows;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,8 +9,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -65,5 +67,17 @@ public class FileUtils {
             e.printStackTrace();
         }
         return new ArrayList<>();
+    }
+
+    @SneakyThrows
+    public static List<String> getFunctions(@NonNull File file) {
+        Pattern pattern = Pattern.compile("^(?!return|while|if|switch|else)^(.(\\s+)?){2,}\\([^!@#$+%^]+?\\)");
+        return Files.readAllLines(file.toPath())
+                .stream()
+                .map(pattern::matcher)
+                .filter(Matcher::find)
+                .map(matcher -> matcher.group(0))
+                .map(String::toLowerCase)
+                .collect(Collectors.toList());
     }
 }

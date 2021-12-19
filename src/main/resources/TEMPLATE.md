@@ -37,13 +37,6 @@
 
 %index%
 
-`@/srcs/glib.c`
-* `glib_init` - Initialize window and image with minilibx.
-* `glib_start` - Initialize & start rendering.
-* `glib_stop` - Destroy image and window.
-* `register_loop_hook` - mlx_loop_hook function wrapped.
-* `rregister_key_hook` - mlx_key_hook function wrapped.
-
 ## 🛠️ Usage
 
 ### Requirements
