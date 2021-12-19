@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea88d0b3-a37f-4fc5-9aa8-d55b1af26921" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step2Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/scene/step2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/WrappedMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ProjectService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/DialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/DialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/OpenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/OpenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step1Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/step1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/step1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/utils/UIUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/utils/UIUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="20492" />
+    <option name="totalTimeSeconds" value="25036" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,14 +65,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Program Files/OpenjFK/lib" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2073027" />
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
@@ -84,7 +88,7 @@
       <recent name="C:\Users\rochb\Documents\Development\42-Hellstar\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.hellstart [clean,package]">
     <configuration name="hellstart [clean,javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -111,6 +115,36 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="hellstart [clean,package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Maven.hellstart [clean,javafx:run]" />
+      <item itemvalue="Maven.hellstart [clean,package]" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -120,7 +154,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639846732971</updated>
-      <workItem from="1639846735642" duration="25157000" />
+      <workItem from="1639846735642" duration="26808000" />
+      <workItem from="1639875582196" duration="140000" />
+      <workItem from="1639905235826" duration="343000" />
+      <workItem from="1639905635608" duration="3320000" />
     </task>
     <servers />
   </component>

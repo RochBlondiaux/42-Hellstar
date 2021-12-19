@@ -1,6 +1,5 @@
 package me.rochblondiaux.hellstar.utils;
 
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
@@ -9,9 +8,16 @@ import lombok.NonNull;
 import me.rochblondiaux.hellstar.model.dialog.DialogBuilder;
 import me.rochblondiaux.hellstar.model.dialog.DialogType;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -47,6 +53,16 @@ public class UIUtil {
     public static Optional<Image> loadImage(@NonNull String name) {
         return getResource("img/" + name)
                 .map(Image::new);
+    }
+
+    public static File loadFile(@NonNull String path) throws URISyntaxException {
+        URL url = UIUtil.class
+                .getClassLoader()
+                .getResource(path);
+
+        if(url == null)
+            throw new IllegalArgumentException(path + " is not found 1");
+        return new File(url.getFile());
     }
 
     public static Optional<InputStream> getResource(@NonNull String path) {

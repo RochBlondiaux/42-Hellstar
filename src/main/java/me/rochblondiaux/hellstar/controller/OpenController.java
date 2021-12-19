@@ -83,6 +83,7 @@ public class OpenController implements Initializable {
             Pane pane1 = (Pane) dragPane.getParent();
             pane1.getChildren().add(pane);
             pane1.getChildren().remove(dragPane);
+            Step1Controller.dataFolder = file;
         }, () -> new DialogBuilder()
                 .setType(DialogType.ERROR)
                 .setMessage("An error occurred.")

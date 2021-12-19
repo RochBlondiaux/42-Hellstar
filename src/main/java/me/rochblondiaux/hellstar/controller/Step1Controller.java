@@ -1,7 +1,5 @@
 package me.rochblondiaux.hellstar.controller;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,11 +7,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import me.rochblondiaux.hellstar.HellStar;
 import me.rochblondiaux.hellstar.model.dialog.DialogBuilder;
 import me.rochblondiaux.hellstar.model.dialog.DialogType;
+import me.rochblondiaux.hellstar.model.project.Project;
 import me.rochblondiaux.hellstar.utils.UIUtil;
 
+import java.io.File;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
@@ -35,23 +37,31 @@ public class Step1Controller implements Initializable {
     @FXML
     private Button next;
 
+    public static File dataFolder;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
-    private boolean isComplete() {
+    private boolean isInvalid() {
         return name.getText().isEmpty()
-                && briefDescription.getText().isEmpty()
-                && aim.getText().isEmpty()
-                && description.getText().isEmpty();
+                || briefDescription.getText().isEmpty()
+                || aim.getText().isEmpty()
+                || description.getText().isEmpty();
     }
 
     @FXML
     public void nextStep(ActionEvent e) {
-        if (!isComplete()) {
+        if (isInvalid()) {
             new DialogBuilder()
                     .setMessage("Please fill all fields!")
                     .setType(DialogType.WARNING)
+                    .build();
+            return;
+        } else if (Objects.isNull(dataFolder)) {
+            new DialogBuilder()
+                    .setMessage("An error occurred!")
+                    .setType(DialogType.ERROR)
                     .build();
             return;
         }
@@ -59,9 +69,10 @@ public class Step1Controller implements Initializable {
             Pane pane1 = (Pane) mainPane.getParent();
             pane1.getChildren().add(pane);
             pane1.getChildren().remove(mainPane);
+            HellStar.get().generate(new Project(name.getText(), briefDescription.getText(), description.getText(), aim.getText(), dataFolder));
         }, () -> new DialogBuilder()
                 .setType(DialogType.ERROR)
-                .setMessage("An error occurred.")
+                .setMessage("An error occurred while displaying data.")
                 .build());
     }
 

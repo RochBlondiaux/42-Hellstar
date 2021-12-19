@@ -51,6 +51,7 @@ public class DialogController implements Initializable {
     public void setDialog(Dialog dialog) {
         this.dialog = dialog;
         title.setFill(dialog.getType().getColor());
+        okBtn.setStyle(String.format("-fx-background-color: %s", UIUtil.toHexString(dialog.getType().getColor())));
         iconBackground.setStyle(String.format("-fx-background-color: %s", UIUtil.toHexString(dialog.getType().getColor())));
         text.setText(dialog.getMessage());
         title.setText(dialog.getType().getTitle());

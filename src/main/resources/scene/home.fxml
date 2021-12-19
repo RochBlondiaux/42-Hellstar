@@ -43,6 +43,8 @@
                   <Font size="32.0" />
                </font>
             </Text>
+            <Text fill="WHITE" layoutX="69.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Developed by Roch Blondiaux" />
+            <Text fill="WHITE" layoutX="102.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version 0.1 alpha" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="centerPane" layoutX="294.0" layoutY="-8.0" prefHeight="600.0" prefWidth="669.0" />
