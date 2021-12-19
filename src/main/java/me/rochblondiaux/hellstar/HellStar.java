@@ -6,8 +6,6 @@ import me.rochblondiaux.hellstar.model.project.Project;
 import me.rochblondiaux.hellstar.service.ConfigurationService;
 import me.rochblondiaux.hellstar.service.ProjectService;
 
-import java.net.URISyntaxException;
-
 /**
  * @author Roch Blondiaux
  * www.roch-blondiaux.com
@@ -18,18 +16,13 @@ public class HellStar {
     private static HellStar instance;
 
     private final ConfigurationService configurationService;
-    private ProjectService projectService;
+    private final ProjectService projectService;
 
     public HellStar() {
         instance = this;
 
         this.configurationService = new ConfigurationService();
-        try {
-            this.projectService = new ProjectService();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-            System.exit(0);
-        }
+        this.projectService = new ProjectService();
     }
 
     public void generate(@NonNull Project project) {

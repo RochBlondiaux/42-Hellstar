@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea88d0b3-a37f-4fc5-9aa8-d55b1af26921" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/USAGE.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step1Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step2Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step2Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/model/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/model/project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TEMPLATE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/step2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/step2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/utils/FileUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="33944" />
+    <option name="totalTimeSeconds" value="35207" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -153,7 +150,7 @@
       <workItem from="1639905235826" duration="343000" />
       <workItem from="1639905635608" duration="5843000" />
       <workItem from="1639935135568" duration="2961000" />
-      <workItem from="1639944973808" duration="4834000" />
+      <workItem from="1639944973808" duration="6089000" />
     </task>
     <servers />
   </component>

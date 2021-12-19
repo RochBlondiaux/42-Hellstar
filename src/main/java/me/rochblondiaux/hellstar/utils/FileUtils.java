@@ -40,8 +40,8 @@ public class FileUtils {
         Files.write(file.toPath(), lines);
     }
 
-    public static void copy(@NonNull File source, @NonNull File destinationFile) throws IOException {
-        Files.copy(FileUtils.class.getResourceAsStream("/TEMPLATE.md"), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+    public static void copy(@NonNull String source, @NonNull File destinationFile) throws IOException {
+        Files.copy(FileUtils.class.getResourceAsStream("/" + source), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
     }
 
     public static int getIndex(@NonNull File file, @NonNull String key) throws IOException {

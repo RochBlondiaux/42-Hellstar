@@ -5,24 +5,19 @@ import me.rochblondiaux.hellstar.model.dialog.DialogBuilder;
 import me.rochblondiaux.hellstar.model.dialog.DialogType;
 import me.rochblondiaux.hellstar.model.project.Project;
 import me.rochblondiaux.hellstar.utils.FileUtils;
-import me.rochblondiaux.hellstar.utils.UIUtil;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Roch Blondiaux
  * www.roch-blondiaux.com
  */
 public class ProjectService {
-
-    private final File template;
-
-    public ProjectService() throws URISyntaxException {
-        this.template = UIUtil.loadFile("TEMPLATE.md");
-    }
 
     public void generate(@NonNull Project project) {
         File copy = new File(project.getDataFolder(), "README.md");
@@ -34,7 +29,7 @@ public class ProjectService {
         }
         try {
             copy.createNewFile();
-            FileUtils.copy(template, copy);
+            FileUtils.copy("TEMPLATE.md", copy);
         } catch (IOException e) {
             new DialogBuilder()
                     .setMessage("Cannot copy template to destination file!")
@@ -55,7 +50,16 @@ public class ProjectService {
             generateIndex(project.getDataFolder(), copy);
         } catch (IOException e) {
             new DialogBuilder()
-                    .setMessage("Cannot generate index!")
+                    .setMessage("Cannot generate index section!")
+                    .setType(DialogType.ERROR)
+                    .build();
+            e.printStackTrace();
+        }
+        try {
+            generateUsage(copy, project);
+        } catch (URISyntaxException | IOException e) {
+            new DialogBuilder()
+                    .setMessage("Cannot generate usage section!")
                     .setType(DialogType.ERROR)
                     .build();
             e.printStackTrace();
@@ -104,5 +108,29 @@ public class ProjectService {
                         e.printStackTrace();
                     }
                 });
+    }
+
+    private void generateUsage(@NonNull File readme, @NonNull Project project) throws URISyntaxException, IOException {
+        File tmp = Files.createTempFile("hellstar", null).toFile();
+        tmp.createNewFile();
+        tmp.deleteOnExit();
+        FileUtils.copy("USAGE.md", tmp);
+
+        if (Objects.isNull(project.getUsageCommand()) && Objects.isNull(project.getRequirements()))
+            return;
+        List<String> lines = Files.readAllLines(readme.toPath());
+        lines.addAll(Files.readAllLines(tmp.toPath()));
+        Files.write(readme.toPath(), lines);
+        FileUtils.replace(readme, "%project_name%", project.getName());
+
+        String usage = "Not set.";
+        if (Objects.nonNull(project.getUsageCommand()))
+            usage = project.getUsageCommand();
+        FileUtils.replace(readme, "%usage_command%", usage);
+
+        String requirements = "";
+        if (Objects.nonNull(project.getRequirements()))
+            requirements = project.getRequirements();
+        FileUtils.replace(readme, "%requirements%", requirements);
     }
 }
