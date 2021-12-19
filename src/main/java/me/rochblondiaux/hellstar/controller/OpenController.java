@@ -82,6 +82,7 @@ public class OpenController implements Initializable {
         UIUtil.load("step1").ifPresentOrElse(pane -> {
             Pane pane1 = (Pane) dragPane.getParent();
             pane1.getChildren().add(pane);
+            pane1.getChildren().remove(dragPane);
         }, () -> new DialogBuilder()
                 .setType(DialogType.ERROR)
                 .setMessage("An error occurred.")

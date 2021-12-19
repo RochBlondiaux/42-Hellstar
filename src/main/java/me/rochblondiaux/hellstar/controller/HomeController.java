@@ -38,10 +38,4 @@ public class HomeController implements Initializable {
     private void generate() {
 
     }
-
-    @FXML
-    public void loadConfigurationPane(ActionEvent event) {
-        generateBtn.setVisible(true);
-
-    }
 }

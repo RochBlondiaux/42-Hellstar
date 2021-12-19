@@ -13,3 +13,37 @@
     -fx-background-color: #634cd4;
     border-color: rgba(255,255,255,1);
 }
+
+.formi {
+    -fx-background-color: transparent;
+    -fx-border-color: grey;
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: #f5f6fa;
+    -fx-highlight-text-fill: #f5f6fa;
+}
+
+.textarea {
+    -fx-background-color: transparent;
+    -fx-border-color: grey;
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: #f5f6fa;
+    -fx-highlight-text-fill: #f5f6fa;
+    text-area-background: transparent;
+}
+
+.textarea .content {
+    -fx-background-color: text-area-background;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}

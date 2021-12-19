@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea88d0b3-a37f-4fc5-9aa8-d55b1af26921" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step2Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scene/step2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/OpenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/OpenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step1Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/step1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/step1.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,13 +21,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="15168" />
+    <option name="totalTimeSeconds" value="20492" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Enum" />
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
       </list>
@@ -112,7 +120,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639846732971</updated>
-      <workItem from="1639846735642" duration="18340000" />
+      <workItem from="1639846735642" duration="25157000" />
     </task>
     <servers />
   </component>
