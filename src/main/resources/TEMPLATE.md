@@ -33,16 +33,7 @@
 
 ## 📑 Index
 
-`@root`
-
 %index_header%
-* [**📁 includes:**](includes/) contains all prototypes, structures and libraries includes.
-* [**📁 mlx:**](mlx/) contains the minilibx sources.
-* [**📁 srcs:**](srcs/) contains all project sources files.
-    * [**📁 maths:**](srcs/maths/) contains all maths related files.
-    * [**📁 maths:**](srcs/maths/) contains all maths related files.
-    * [**📁 vectors:**](srcs/graphics/) contains all vectors (2D/3D) related files.
-    * [**📁 utils:**](srcs/utils/) contains all utilities files.
 
 %index%
 

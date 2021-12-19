@@ -5,8 +5,10 @@ import lombok.NonNull;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,5 +40,30 @@ public class FileUtils {
 
     public static void copy(@NonNull File source, @NonNull File destinationFile) throws IOException {
         Files.copy(FileUtils.class.getResourceAsStream("/TEMPLATE.md"), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+    }
+
+    public static int getIndex(@NonNull File file, @NonNull String key) throws IOException {
+        return Files.readAllLines(file.toPath()).indexOf(key);
+    }
+
+    public static String formatPath(@NonNull File dataFolder, @NonNull Path path) {
+        String a = path.toString();
+        a = a.replace(dataFolder.getAbsolutePath(), "");
+        a = a.replace("\\", "/");
+        return a;
+    }
+
+    public static List<File> walk(@NonNull File dataFolder) {
+        try {
+            return Files.walk(dataFolder.toPath(), 1)
+                    .map(Path::toFile)
+                    .filter(File::isDirectory)
+                    .filter(file -> !file.equals(dataFolder))
+                    .sorted((o1, o2) -> o2.getName().compareTo(o1.getName()))
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new ArrayList<>();
     }
 }
