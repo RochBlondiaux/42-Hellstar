@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="513.0" style="-fx-background-color: #2f3640;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.rochblondiaux.hellstar.controller.DialogController">
-   <children>
-      <AnchorPane fx:id="iconBackground" layoutX="-1.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #2ed573;">
-         <children>
-            <ImageView fx:id="icon" fitHeight="109.0" fitWidth="114.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/info.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <Text fx:id="title" fill="#2ed573" layoutX="159.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUCCESS!">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text fx:id="text" fill="WHITE" layoutX="159.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is a very important message!" wrappingWidth="404.13671875">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Button fx:id="okBtn" layoutX="293.0" layoutY="111.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #2ed573;" stylesheets="@../css/home.css" text="OK" textFill="WHITE" />
-   </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="150.0" prefWidth="513.0" style="-fx-background-color: #2f3640;"
+            xmlns="http://javafx.com/javafx/17" fx:controller="me.rochblondiaux.hellstar.controller.DialogController">
+    <children>
+        <AnchorPane fx:id="iconBackground" layoutX="-1.0" prefHeight="150.0" prefWidth="150.0"
+                    style="-fx-background-color: #2ed573;">
+            <children>
+                <ImageView fx:id="icon" fitHeight="109.0" fitWidth="114.0" layoutX="21.0" layoutY="21.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/info.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <Text fx:id="title" fill="#2ed573" layoutX="159.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="SUCCESS!">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Text>
+        <Text fx:id="text" fill="WHITE" layoutX="159.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="This is a very important message!" wrappingWidth="404.13671875">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Text>
+        <Button fx:id="okBtn" layoutX="293.0" layoutY="111.0" mnemonicParsing="false" onAction="#close"
+                prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #2ed573;" stylesheets="@../css/home.css"
+                text="OK" textFill="WHITE"/>
+    </children>
 </AnchorPane>

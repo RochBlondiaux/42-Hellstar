@@ -1,10 +1,12 @@
 package me.rochblondiaux.hellstar.service;
 
+import javafx.scene.layout.Pane;
 import lombok.NonNull;
 import me.rochblondiaux.hellstar.model.dialog.DialogBuilder;
 import me.rochblondiaux.hellstar.model.dialog.DialogType;
 import me.rochblondiaux.hellstar.model.project.Project;
 import me.rochblondiaux.hellstar.utils.FileUtils;
+import me.rochblondiaux.hellstar.utils.UIUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +21,7 @@ import java.util.Objects;
  */
 public class ProjectService {
 
-    public void generate(@NonNull Project project) {
+    public void generate(@NonNull Project project, @NonNull Pane pane) {
         File copy = new File(project.getDataFolder(), "README.md");
         if (copy.exists()) {
             new DialogBuilder()
@@ -73,6 +75,15 @@ public class ProjectService {
                     .build();
             e.printStackTrace();
         }
+        new DialogBuilder()
+                .setMessage("Your README.md file has been generated successfully!")
+                .setType(DialogType.SUCCESS)
+                .onExit(() -> {
+                    pane.getChildren().clear();
+                    UIUtil.load("open")
+                            .ifPresent(pane1 -> pane.getChildren().add(pane1));
+                })
+                .build();
     }
 
     public void generateIndex(@NonNull File dataFolder, @NonNull File readme) throws IOException {

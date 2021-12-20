@@ -20,8 +20,8 @@ import java.util.Properties;
 public class ConfigurationService {
 
     private final File dataFolder;
-    private File configurationFile;
     private final Properties configuration;
+    private File configurationFile;
 
     public ConfigurationService() {
         this.dataFolder = createConfigurationFolder();

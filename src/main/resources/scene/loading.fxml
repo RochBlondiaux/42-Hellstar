@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="mainPane" prefHeight="600.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.rochblondiaux.hellstar.controller.Step2Controller">
+   <children>
+      <ImageView fitHeight="370.0" fitWidth="328.0" layoutX="225.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/loading.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

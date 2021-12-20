@@ -1,5 +1,6 @@
 package me.rochblondiaux.hellstar;
 
+import javafx.scene.layout.Pane;
 import lombok.Data;
 import lombok.NonNull;
 import me.rochblondiaux.hellstar.model.project.Project;
@@ -25,11 +26,11 @@ public class HellStar {
         this.projectService = new ProjectService();
     }
 
-    public void generate(@NonNull Project project) {
-        this.projectService.generate(project);
-    }
-
     public static HellStar get() {
         return instance;
+    }
+
+    public void generate(@NonNull Project project, Pane parent) {
+        this.projectService.generate(project, parent);
     }
 }

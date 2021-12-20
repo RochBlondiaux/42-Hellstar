@@ -21,10 +21,8 @@ public class Project {
     private final String description;
     private final String aim;
     private final File dataFolder;
-
+    private final List<Path> screenshots = new ArrayList<>();
     private String requirements;
     private String usageCommand;
-
-    private final List<Path> screenshots = new ArrayList<>();
 
 }

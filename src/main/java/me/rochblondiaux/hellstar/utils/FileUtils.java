@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -41,7 +42,7 @@ public class FileUtils {
     }
 
     public static void copy(@NonNull String source, @NonNull File destinationFile) throws IOException {
-        Files.copy(FileUtils.class.getResourceAsStream("/" + source), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(Objects.requireNonNull(FileUtils.class.getResourceAsStream("/" + source)), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
     }
 
     public static int getIndex(@NonNull File file, @NonNull String key) throws IOException {
@@ -71,7 +72,7 @@ public class FileUtils {
 
     @SneakyThrows
     public static List<String> getFunctions(@NonNull File file) {
-        Pattern pattern = Pattern.compile("^(?!return|while|if|switch|else)^(.(\\s+)?){2,}\\([^!@#$+%^]+?\\)");
+        Pattern pattern = Pattern.compile("^((.)(?!return|while|if|switch|else)(\\s+)?){2,}\\([^!@#$+%^]+?\\)");
         return Files.readAllLines(file.toPath())
                 .stream()
                 .map(pattern::matcher)

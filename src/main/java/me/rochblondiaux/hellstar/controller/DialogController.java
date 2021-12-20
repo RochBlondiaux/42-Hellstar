@@ -55,8 +55,7 @@ public class DialogController implements Initializable {
         iconBackground.setStyle(String.format("-fx-background-color: %s", UIUtil.toHexString(dialog.getType().getColor())));
         text.setText(dialog.getMessage());
         title.setText(dialog.getType().getTitle());
-        if (dialog.getType().equals(DialogType.ERROR))
-        {
+        if (dialog.getType().equals(DialogType.ERROR)) {
             if (Objects.isNull(dialog.getOnExit()))
                 dialog.setOnExit(Platform::exit);
             okBtn.setText("Exit");

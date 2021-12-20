@@ -15,6 +15,10 @@ public class HellStarLauncher extends Application {
 
     private double xOffset, yOffset;
 
+    public static void main(String[] args) {
+        launch();
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
         new HellStar();
@@ -35,9 +39,5 @@ public class HellStarLauncher extends Application {
         stage.getIcons().add(UIUtil.loadImage("icon-white.png").orElseThrow());
         stage.setScene(scene);
         stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }

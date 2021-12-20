@@ -5,10 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea88d0b3-a37f-4fc5-9aa8-d55b1af26921" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SCREESHOTS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scene/loading.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStarLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStarLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/DialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/DialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/OpenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/OpenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step1Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step3Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step3Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/model/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/model/project/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ConfigurationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ConfigurationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/USAGE.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/USAGE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/dialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/open.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/open.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/step1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/step1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/step2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/step2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/step3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/step3.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,15 +36,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="43619" />
+    <option name="totalTimeSeconds" value="45224" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -56,7 +76,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Fdf" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -151,7 +171,7 @@
       <workItem from="1639905635608" duration="5843000" />
       <workItem from="1639935135568" duration="2961000" />
       <workItem from="1639944973808" duration="6428000" />
-      <workItem from="1639991276774" duration="9503000" />
+      <workItem from="1639991276774" duration="11492000" />
     </task>
     <servers />
   </component>

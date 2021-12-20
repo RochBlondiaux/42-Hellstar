@@ -17,6 +17,7 @@ import me.rochblondiaux.hellstar.HellStar;
 import me.rochblondiaux.hellstar.model.dialog.DialogBuilder;
 import me.rochblondiaux.hellstar.model.dialog.DialogType;
 import me.rochblondiaux.hellstar.model.project.Project;
+import me.rochblondiaux.hellstar.utils.UIUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -112,7 +113,15 @@ public class Step3Controller implements Initializable {
                 .collect(Collectors.toList());
         project.getScreenshots().clear();
         project.getScreenshots().addAll(screenshots);
-        HellStar.get().generate(project);
+        Pane parent = (Pane) mainPane.getParent();
+        parent.getChildren().remove(mainPane);
+        UIUtil.load("loading")
+                .ifPresentOrElse(pane -> parent.getChildren().add(pane),
+                        () -> new DialogBuilder()
+                                .setType(DialogType.WARNING)
+                                .setMessage("An error occurred while displaying loading screen!")
+                                .build());
+        HellStar.get().generate(project, parent);
     }
 
     @SneakyThrows

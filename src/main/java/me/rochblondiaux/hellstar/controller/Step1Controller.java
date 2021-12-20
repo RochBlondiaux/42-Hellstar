@@ -23,6 +23,7 @@ import java.util.ResourceBundle;
  */
 public class Step1Controller implements Initializable {
 
+    public static File dataFolder;
     @FXML
     private Pane mainPane;
     @FXML
@@ -35,8 +36,6 @@ public class Step1Controller implements Initializable {
     private TextArea description;
     @FXML
     private Button next;
-
-    public static File dataFolder;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -1,6 +1,5 @@
 package me.rochblondiaux.hellstar.controller;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.Dragboard;
