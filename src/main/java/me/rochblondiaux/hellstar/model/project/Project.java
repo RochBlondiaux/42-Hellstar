@@ -4,6 +4,9 @@ import lombok.Data;
 import lombok.Setter;
 
 import java.io.File;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Roch Blondiaux
@@ -21,4 +24,7 @@ public class Project {
 
     private String requirements;
     private String usageCommand;
+
+    private final List<URL> screenshots = new ArrayList<>();
+
 }

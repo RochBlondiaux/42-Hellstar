@@ -7,8 +7,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import lombok.Setter;
-import me.rochblondiaux.hellstar.HellStar;
 import me.rochblondiaux.hellstar.model.project.Project;
+import me.rochblondiaux.hellstar.utils.UIUtil;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -36,14 +36,19 @@ public class Step2Controller implements Initializable {
 
     @FXML
     public void generate(ActionEvent e) {
-        Pane pane1 = (Pane) mainPane.getParent();
-        //pane1.getChildren().add(root);
-        pane1.getChildren().remove(mainPane);
         if (!requirements.getText().isEmpty())
             project.setRequirements(requirements.getText());
         if (!usage.getText().isEmpty())
             project.setUsageCommand(usage.getText());
-        HellStar.get().generate(project);
+
+        UIUtil.loadScene("step3")
+                .ifPresent(scene -> {
+                    Step3Controller controller = scene.getLoader().getController();
+                    controller.setProject(project);
+                    Pane pane1 = (Pane) mainPane.getParent();
+                    pane1.getChildren().add(scene.getRoot());
+                    pane1.getChildren().remove(mainPane);
+                });
     }
 
 }

@@ -1,23 +1,20 @@
 package me.rochblondiaux.hellstar.utils;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import lombok.NonNull;
 import me.rochblondiaux.hellstar.model.dialog.DialogBuilder;
 import me.rochblondiaux.hellstar.model.dialog.DialogType;
+import me.rochblondiaux.hellstar.model.ui.UIScene;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -26,6 +23,32 @@ import java.util.Optional;
  * www.roch-blondiaux.com
  */
 public class UIUtil {
+
+    public static Optional<UIScene> loadScene(@NonNull String name) {
+        try {
+            URL url = UIUtil.class.getClassLoader().getResource("scene/" + name + ".fxml");
+            if (Objects.isNull(url) || Objects.isNull(url.getPath())) {
+                new DialogBuilder()
+                        .setMessage(String.format("Couldn't load %s window from resources folder!", name))
+                        .setType(DialogType.ERROR)
+                        .build();
+                return Optional.empty();
+            }
+            FXMLLoader loader = new FXMLLoader(url);
+            Parent parent = loader.load();
+            if (Objects.nonNull(parent))
+                return Optional.of(new UIScene(loader, parent));
+            else
+                System.out.println("PARENT IS NULL Path: " + name);
+        } catch (IOException e) {
+            new DialogBuilder()
+                    .setMessage(String.format("Couldn't load %s window from resources folder!", name))
+                    .setType(DialogType.ERROR)
+                    .build();
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
 
     public static Optional<Pane> load(@NonNull String name) {
         try {
@@ -60,7 +83,7 @@ public class UIUtil {
                 .getClassLoader()
                 .getResource(path);
 
-        if(url == null)
+        if (url == null)
             throw new IllegalArgumentException(path + " is not found 1");
         return new File(url.getFile());
     }
