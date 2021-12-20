@@ -75,8 +75,9 @@ public class Step3Controller implements Initializable {
                                             .build();
                                     return;
                                 }
-                                hBox.getChildren().add(createImageView(file));
+                                hBox.getChildren().add(createImageView(file, hBox));
                                 scrollPane.setContent(hBox);
+                                project.getScreenshots().add(file.toPath());
                             },
                             () -> new DialogBuilder()
                                     .setType(DialogType.WARNING)
@@ -99,11 +100,15 @@ public class Step3Controller implements Initializable {
     }
 
     @SneakyThrows
-    private ImageView createImageView(final File imageFile) {
+    private ImageView createImageView(@NonNull File imageFile, @NonNull Pane parent) {
         final Image image = new Image(new FileInputStream(imageFile));
         ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(150);
+        imageView.setFitHeight(150);
         imageView.setPreserveRatio(true);
+        imageView.setOnMouseClicked(e -> {
+            parent.getChildren().remove(imageView);
+            project.getScreenshots().remove(imageFile.toPath());
+        });
         return imageView;
     }
 }

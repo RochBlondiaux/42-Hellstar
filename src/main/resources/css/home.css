@@ -1,17 +1,14 @@
-.button
-{
+.button {
     -fx-background-color: #9c88ff;
 }
 
-.button:hover
-{
+.button:hover {
     -fx-background-color: #8c7ae6;
 }
 
-.button:pressed
-{
+.button:pressed {
     -fx-background-color: #634cd4;
-    border-color: rgba(255,255,255,1);
+    border-color: rgba(255, 255, 255, 1);
 }
 
 .formi {
@@ -39,38 +36,52 @@
     -fx-background-color: transparent;
 }
 
-.text-area .scroll-pane .viewport{
+.text-area .scroll-pane .viewport {
     -fx-background-color: transparent;
 }
 
-.text-area .scroll-pane .content{
+.text-area .scroll-pane .content {
     -fx-background-color: transparent;
 }
 
 .scroll-bar:horizontal .thumb,
 .scroll-bar:vertical .thumb {
-    -fx-background-color : transparent;
-    -fx-background-insets : 2.0, 0.0, 0.0;
-    -fx-background-radius : 2;
+    -fx-background-insets: 2.0, 0.0, 0.0;
+    -fx-background-radius: 2;
 }
 
 .scroll-bar:horizontal .thumb:hover,
 .scroll-bar:vertical .thumb:hover {
-    -fx-background-color : transparent;
-    -fx-background-insets : 2.0, 0.0, 0.0;
-    -fx-background-radius : 2;
+    -fx-background-insets: 2.0, 0.0, 0.0;
+    -fx-background-radius: 2;
 }
 
 .rounded-scroll-pane > .scroll-bar:horizontal .thumb,
 .rounded-scroll-pane > .scroll-bar:vertical .thumb {
-    -fx-background-color : #9c88ff;
-    -fx-background-insets : 2.0, 0.0, 0.0;
-    -fx-background-radius : 2em;
+    -fx-background-color: #9c88ff;
+    -fx-background-insets: 2.0, 0.0, 0.0;
+    -fx-background-radius: 2em;
+    -fx-focus-color: transparent;
 }
 
 .rounded-scroll-pane > .scroll-bar:horizontal .thumb:hover,
 .rounded-scroll-pane > .scroll-bar:vertical .thumb:hover {
-    -fx-background-color : #8c7ae6;
-    -fx-background-insets : 2.0, 0.0, 0.0;
-    -fx-background-radius : 2em;
+    -fx-background-color: #8c7ae6;
+    -fx-background-insets: 2.0, 0.0, 0.0;
+    -fx-background-radius: 2em;
+    -fx-focus-color: transparent;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-background-insets: -1.4, 0, 1, 2;
+}
+
+.scroll-bar .track {
+    -fx-fill: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
 }

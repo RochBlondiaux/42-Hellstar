@@ -13,12 +13,23 @@ import me.rochblondiaux.hellstar.utils.UIUtil;
  */
 public class HellStarLauncher extends Application {
 
+    private double xOffset, yOffset;
+
     @Override
     public void start(Stage stage) throws Exception {
         new HellStar();
 
         stage.initStyle(StageStyle.UNDECORATED);
         Parent root = UIUtil.load("home").orElseThrow();
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+        root.setOnMouseDragged(event -> {
+            stage.setX(event.getScreenX() - xOffset);
+            stage.setY(event.getScreenY() - yOffset);
+        });
+
         Scene scene = new Scene(root);
         stage.setTitle("Hellstar v0.1");
         stage.getIcons().add(UIUtil.loadImage("icon-white.png").orElseThrow());
