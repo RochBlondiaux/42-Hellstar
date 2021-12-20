@@ -20,9 +20,15 @@ import me.rochblondiaux.hellstar.model.project.Project;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 /**
  * @author Roch Blondiaux
@@ -90,6 +96,22 @@ public class Step3Controller implements Initializable {
 
     @FXML
     public void nextStep(ActionEvent e) {
+        List<Path> screenshots = new ArrayList<>(project.getScreenshots())
+                .stream()
+                .map(path -> {
+                    Path finalPath = new File(project.getDataFolder(), path.getFileName().toString()).toPath();
+                    try {
+                        Files.copy(path, finalPath);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        return null;
+                    }
+                    return finalPath;
+                })
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+        project.getScreenshots().clear();
+        project.getScreenshots().addAll(screenshots);
         HellStar.get().generate(project);
     }
 

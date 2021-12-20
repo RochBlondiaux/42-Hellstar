@@ -64,6 +64,15 @@ public class ProjectService {
                     .build();
             e.printStackTrace();
         }
+        try {
+            generateScreenshots(copy, project);
+        } catch (IOException e) {
+            new DialogBuilder()
+                    .setMessage("Cannot generate screenshots section!")
+                    .setType(DialogType.ERROR)
+                    .build();
+            e.printStackTrace();
+        }
     }
 
     public void generateIndex(@NonNull File dataFolder, @NonNull File readme) throws IOException {
@@ -133,4 +142,29 @@ public class ProjectService {
             requirements = project.getRequirements();
         FileUtils.replace(readme, "%requirements%", requirements);
     }
+
+    private void generateScreenshots(@NonNull File readme, @NonNull Project project) throws IOException {
+        if (project.getScreenshots().size() == 0)
+            return;
+        File tmp = Files.createTempFile("hellstar", null).toFile();
+        tmp.createNewFile();
+        tmp.deleteOnExit();
+        FileUtils.copy("SCREENSHOTS.md", tmp);
+        List<String> lines = Files.readAllLines(readme.toPath());
+        lines.addAll(Files.readAllLines(tmp.toPath()));
+        Files.write(readme.toPath(), lines);
+        int index = FileUtils.getIndex(readme, "%screenshots%");
+
+        project.getScreenshots()
+                .forEach(path -> {
+                    String formattedRaw = FileUtils.formatPath(project.getDataFolder(), path);
+                    try {
+                        FileUtils.insertLine(readme, index, String.format("<img alt=\"%s\" src=\"%s\"/>", path.getFileName(), formattedRaw));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+        FileUtils.replace(readme, "%screenshots%", "\n");
+    }
+
 }

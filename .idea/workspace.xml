@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea88d0b3-a37f-4fc5-9aa8-d55b1af26921" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SCREESHOTS.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStarLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/HellStarLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step3Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/controller/Step3Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/model/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/model/project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scene/step3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scene/step3.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/rochblondiaux/hellstar/service/ProjectService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="41917" />
+    <option name="totalTimeSeconds" value="43619" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -58,7 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Program Files/OpenjFK/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Fdf" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -153,7 +151,7 @@
       <workItem from="1639905635608" duration="5843000" />
       <workItem from="1639935135568" duration="2961000" />
       <workItem from="1639944973808" duration="6428000" />
-      <workItem from="1639991276774" duration="7205000" />
+      <workItem from="1639991276774" duration="9503000" />
     </task>
     <servers />
   </component>
